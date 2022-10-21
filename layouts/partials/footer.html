@@ -1,5 +1,15 @@
 <footer class="site-footer">
   <div class="inner">
+    <div style="display:inline-block">
+      <a href="{{ .Site.Params.twitterlink }}">
+        <i class="fa fa-twitter fa-4x social-media-icon"></i>
+      </a>
+    </div>
+    <div style="display:inline-block">
+      <a href="{{ .Site.Params.facebooklink }}">
+        <i class="fa fa-facebook fa-4x social-media-icon"></i>
+      </a>
+    </div>
     {{ with .Site.Params.copyright }}
       <section class="copyright">{{ . | markdownify }}</section>{{ end }}
 

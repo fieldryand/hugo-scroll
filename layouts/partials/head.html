@@ -26,6 +26,11 @@
   href="{{ "fork-awesome/css/fork-awesome.min.css" | absURL }}"
   type="text/css"
 />
+<link
+  rel="stylesheet"
+  href="{{ .Site.Params.wwwURL }}fork-awesome/css/fork-awesome.min.css"
+  type="text/css"
+/>
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}

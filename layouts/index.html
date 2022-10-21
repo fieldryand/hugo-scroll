@@ -5,14 +5,22 @@
 <header id="site-head" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
     <div class="vertical">
         <div id="site-head-content" class="inner">
+            <div>
+              <img src="{{ .Site.Params.logo }}" style="max-width:100%">
 
-            {{ with .Params.header_headline }}<h1 class="blog-title">{{ . }}</h1>{{ end }}
-            {{ with .Params.header_subheadline }}<h2 class="blog-description">{{ . }}</h2>{{ end }}
+              {{ with .Params.header_subheadline }}<h2 class="blog-description">{{ . }}</h2>{{ end }}
+            </div>
+
+            {{ with .Site.Params.hero }}
+            <div>
+              <img src="{{ . }}" style="max-width:100%; padding-top:1em;">
+            </div>
+            {{ end }}
 
             {{ range where $sections ".Params.header_menu" "eq" true }}
                  <a class='btn site-menu' data-title-anchor='{{ anchorize .Title }}'>{{ .Title }}</a>
             {{ end }}
-            <i id='header-arrow' class="fa fa-angle-down"></i>
+            <a id="cta" class="btn" href="{{ .Site.Params.calltoaction.link }}">{{ .Site.Params.calltoaction.text }}</a>
         </div>
     </div>
 </header>
